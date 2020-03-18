@@ -1,0 +1,21 @@
+.form {
+    width: 700px;
+    background-color:#32DD88;
+    background-image: linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    linear-gradient(60deg, #61dafb 25%, transparent 25.5%, transparent 75%, #61dafb 75%, #61dafb),
+    linear-gradient(60deg, #61dafb 25%, transparent 25.5%, transparent 75%, #61dafb 75%, #61dafb);
+    background-size:80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+.btn {
+    background: #61dafb;
+    border: 0px;
+}
+
+.input {
+    border: 0px;
+}
