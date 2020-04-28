@@ -24,12 +24,12 @@ class App extends React.Component {
         name: '',
         email: '',
         entries: 0,
-        joined: ''
-      }
+        joined: '',
+      },
     };
   }
 
-  onInputChange = event => {
+  onInputChange = (event) => {
     this.setState({ input: event.target.value });
   };
 
@@ -38,26 +38,26 @@ class App extends React.Component {
     fetch('https://cryptic-oasis-38489.herokuapp.com/imageURL', {
       method: 'post',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        input: this.state.input
-      })
+        input: this.state.input,
+      }),
     })
-      .then(response => response.json())
-      .then(response => {
+      .then((response) => response.json())
+      .then((response) => {
         if (response) {
           fetch('https://cryptic-oasis-38489.herokuapp.com/image', {
             method: 'put',
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-              id: this.state.user.id
-            })
+              id: this.state.user.id,
+            }),
           })
-            .then(response => response.json())
-            .then(updatedUser => {
+            .then((response) => response.json())
+            .then((updatedUser) => {
               this.setState(
                 Object.assign(this.state.user, { entries: updatedUser })
               );
@@ -65,29 +65,29 @@ class App extends React.Component {
         }
         this.displayFace(calculateFacePosition(response));
       })
-      .catch(error => console.log(error));
+      .catch((error) => console.log(error));
   };
 
-  changeRoute = getRoute => {
+  changeRoute = (getRoute) => {
     if (getRoute === 'SignIn') {
       this.setState({ box: '', imageURL: '' });
     }
     this.setState({ route: getRoute });
   };
 
-  displayFace = getBox => {
+  displayFace = (getBox) => {
     this.setState({ box: getBox });
   };
 
-  loadUserInfo = data => {
+  loadUserInfo = (data) => {
     this.setState({
       user: {
         id: data.id,
         name: data.name,
         email: data.email,
         entries: data.entries,
-        joined: data.joined
-      }
+        joined: data.joined,
+      },
     });
   };
 
