@@ -97,6 +97,7 @@ class App extends React.Component {
         <div className='App'>
           <Particles className='particles' params={{ particlesOptions }} />
           <div className='signIn'>
+            Test user E-mail: testuser@gmail.com, Password: 1234
             <Logo />
             <SignIn
               loadUserInfo={this.loadUserInfo}
